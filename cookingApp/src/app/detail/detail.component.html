@@ -1,0 +1,44 @@
+<mat-card>
+  <h4>{{recipe.name}}</h4>
+  <h3>
+    <a *ngIf="recipe.type === 'link'" [href]="recipe.url" target="_blank">Lien vers la recette</a>
+  </h3>
+  <div class="row" *ngIf="recipe.type === 'details'">
+
+    <div class="col-md-6">
+      <img [src]="recipe.url" alt="" srcset="">
+    </div>
+
+    <div class="col-md-6">
+      <h5>Catégorie</h5>
+      <p>{{recipe.type}}</p>
+      <hr>
+      <h5>Durée</h5>
+      <p>{{recipe.duration}}</p>
+      <hr>
+      <h5>Nombre de personnes</h5>
+      <p>{{recipe.serving}}</p>
+      <hr>
+      <h5>Ingredients</h5>
+      <p *ngFor="let e of ingredients; let i=index">
+        {{i + 1}} - {{e.name}}
+      </p>
+      <hr>
+      <h5>Instructions</h5>
+      <p *ngFor="let e of recipe.details.instructions; let i=index">
+        {{i + 1}} - {{e.content}}
+      </p>
+
+    </div>
+  </div>
+
+  <div class="actions mt-4">
+    <button mat-raised-button [routerLink]="['/update', recipe._id]" color="primary">
+      <mat-icon>create</mat-icon>
+    </button>
+    &nbsp;
+    <button mat-raised-button [routerLink]="['/list']" color="accent" type="button">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </div>
+</mat-card>

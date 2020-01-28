@@ -1,0 +1,21 @@
+<app-loader></app-loader>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span [routerLink]="['/list']">Mes recettes</span>
+    <span class="example-spacer"></span>
+
+    <button mat-flat-button color="accent" [matMenuTriggerFor]="beforeMenu">
+      <!-- <img src="../assets/profil.png/"  height="30" width="30"> -->
+      Groupe 4
+    </button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item [routerLink]="['/update/new']">Ajouter recette</button>
+      <button mat-menu-item [routerLink]="['/ingredient']">Ingredient</button>
+      <!-- <button mat-menu-item>Déconnecter</button> -->
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container" style="margin-top: 85px;">
+  <router-outlet></router-outlet>
+</div>

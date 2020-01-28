@@ -1,0 +1,33 @@
+<p>ingredient works!</p>
+
+<mat-card>
+  <form [formGroup]="myForm">
+    <mat-form-field>
+      <mat-label>Nom d'ingredient</mat-label>
+      <input matInput formControlName="name" required>
+    </mat-form-field>
+    &nbsp;&nbsp;
+    <button mat-raised-button color="primary" [disabled]="myForm.invalid" (click)="submit(myForm.value)">
+      <mat-icon>{{ !isEdit ? 'add' : 'create'}}</mat-icon>
+    </button>
+  </form>
+
+
+
+  <mat-list role="list">
+    <mat-list-item matRipple *ngFor="let e of list">
+      <div class="myrow">
+
+        <p>{{e.name}}</p>
+        <div>
+          <button mat-icon-button (click)="edit(e)" color="primary">
+            <mat-icon>create</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="delete(e._id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
