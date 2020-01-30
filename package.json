@@ -3,7 +3,7 @@
   "scripts": {
     "front": "cd cookingApp && ng serve --port 4210",
     "back": "cd api && npm run dev",
-    "install": "cd cookingApp  && cd ../api && npm i",
+    "install": "cd cookingApp && npm install && cd ../api && npm i",
     "pull": "git pull origin master",
     "remove": "git remote rm origin",
     "init": "git init && git remote add origin https://github.com/jtaswin/API-MyMenu",
