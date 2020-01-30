@@ -1,13 +1,12 @@
 {
   "name": "Groupe",
   "scripts": {
-    "front": "cd cockapp && ng serve --port 4210",
+    "front": "cd cookingApp && ng serve --port 4210",
     "back": "cd api && npm run dev",
-    "install": "cd cockapp  && cd ../api && npm i",
+    "install": "cd cookingApp  && cd ../api && npm i",
     "pull": "git pull origin master",
     "remove": "git remote rm origin",
-    "init0": "git init && git remote add origin https://github.com/djm2x/recette-fake.git",
-    "init": "git init && git remote add origin https://github.com/UniversiteLimoges/Cooking-App",
+    "init": "git init && git remote add origin https://github.com/jtaswin/API-MyMenu",
     "push": "git add . && git commit -m \"add full stack app\" && git push -u origin master"
   }
 }
